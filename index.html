@@ -68,13 +68,20 @@
       font-family: 'Inter', sans-serif;
     }
     p strong {
-      color: var(--accent);
-      font-weight: 600;
-      background-color: var(--accent-bg);
-      padding: 0 4px;
-      border-radius: 4px;
-      cursor: pointer;
-      position: relative;
+  color: var(--text); /* Ana metin rengi ile uyumlu */
+  font-weight: 600;
+  background-color: transparent; /* Arka plan yok */
+  padding: 0 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+p strong[data-tip] {
+  color: var(--accent); /* Sadece tooltip olanlar kırmızı */
+  background-color: var(--accent-bg); /* Hafif kırmızı zemin */
+  padding: 0 4px;
+}
     }
     .image-block {
       margin: 32px 0;
@@ -144,8 +151,7 @@
       <img src="https://static.bundle.app/studio/5d88a525-ea48-43df-81c1-8a3640d71b4d/1a77be7d-d677-4e4f-8077-5581ceafdb66.png" alt="Elektrikli fırın">
       <div class="caption">20.yy başlarından bir elektrikli fırın</div>
     </div>
-    <p><strong data-tip="Dökme demir sobalar 1700’lerde hem ısı kaynağı hem de fırın olarak kullanıldı.">1700’lerde</strong> pek popüler olan <strong>dökme demir sobalar</strong> devreye girerdi. Bu sobalar hem bulunduğu ortamı ısıtmak, hem üstüne tencere tava koyup ocak olarak değerlendirmek hem de kapaklı gözü ile bildiğimiz fırın olarak kullanmak için tasarlanmıştı. Peki ya, evet doğru tahmin ettiniz, dökme demir fırını da kimse düşünmeseydi?</p>
-    <p><strong>Resmi kayıtlarda</strong> yazılı ilk fırın 1490’larda, Fransa’da tuğladan üretilmiş. El mecbur, tuğla fırına dönüyoruz. Peki olmaz olmaz, ya o da icat edilmeseydi? İşte o biraz zor. Çünkü ilk kez yazılı kayıtlara geçmesi, <strong>tuğla fırınların</strong> MÖ 2500’lerden beri kullanıldığı gerçeğini değiştirmiyor. Mezopotamyalılara sevgilerimizle.</p>
+    <p><strong>1700’lerde</strong> pek popüler olan <strong>dökme demir sobalar</strong> devreye girerdi.<strong>Resmi kayıtlarda</strong> yazılı ilk fırın 1490’larda, Fransa’da tuğladan üretilmiş. El mecbur, tuğla fırına dönüyoruz. Peki olmaz olmaz, ya o da icat edilmeseydi? İşte o biraz zor. Çünkü ilk kez yazılı kayıtlara geçmesi, <strong>tuğla fırınların</strong> MÖ 2500’lerden beri kullanıldığı gerçeğini değiştirmiyor. Mezopotamyalılara sevgilerimizle.</p>
     <div class="image-block">
       <img src="https://static.bundle.app/studio/5d88a525-ea48-43df-81c1-8a3640d71b4d/04422189-58d3-4c15-9ddf-fd05a21f4813.png" alt="Tuğla fırın">
       <div class="caption">Roma İmparatorluğu döneminden kalma bir tuğla fırın</div>
@@ -158,11 +164,16 @@
       <img src="https://static.bundle.app/studio/5d88a525-ea48-43df-81c1-8a3640d71b4d/d13f614f-297c-40b1-b031-d930eceb7d6c.jpg" alt="Bosch Serie 8 ankastre fırın">
     </div>
     <p><strong>Bosch’un Serie 8</strong> ankastre fırın ailesi; kendini temizleme, cep telefonundan kontrol gibi birçok yenilikle fırın tarihinde yeni bir sayfa açıyor.</p>
-    <div class="button-wrapper">
+   <div class="button-wrapper">
       <a class="button" href="https://ad.doubleclick.net/ddm/trackclk/N2054846.3735144BUNDLEAPP/B32486569.406791996" target="_blank">Hemen Keşfet</a>
     </div>
   </div>
 
+  <div class="footer-cta">
+    <a href="https://ad.doubleclick.net/ddm/trackclk/N2054846.3735144BUNDLEAPP/B32486569.406791996" target="_blank">
+      Hemen Keşfet
+    </a>
+  </div>
   <div class="tooltip" id="tooltip"></div>
   <script>
     const tooltip = document.getElementById('tooltip');
