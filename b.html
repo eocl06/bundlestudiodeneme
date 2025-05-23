@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fırınsız Bir Mutfak?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+      --bg: #fefefe;
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-bg: #eff6ff;
+      --font: 'Roboto', sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0;
+      background: linear-gradient(to right, #93c5fd, #3b82f6);
+      border-radius: 2px;
+      box-shadow: 0 0 6px rgba(59, 130, 246, 0.3);
+      z-index: 1001;
+      transition: width 0.25s ease-out;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px 24px 32px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+    h1, h2 {
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 2.25rem;
+      font-family: 'Playfair Display', serif;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 48px;
+    }
+    p {
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+    }
+    p strong {
+      color: var(--text);
+      font-weight: 600;
+      background-color: var(--accent-bg);
+      padding: 0 4px;
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+    }
+    .image-block {
+      margin: 32px 0;
+    }
+    .image-block img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    .caption {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #9ca3af;
+      margin-top: 8px;
+    }
+    .button-wrapper {
+      text-align: center;
+      margin-top: 56px;
+    }
+    .button {
+      background-color: var(--accent);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+      transition: all 0.3s ease;
+    }
+    .button:hover {
+      background-color: #1e40af;
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      border: 1px solid #d1d5db;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      max-width: 260px;
+      width: max-content;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progress-bar"></div>
+  <div class="container">
+        <h1>Fırınsız Bir Mutfak Düşünebilir misiniz?</h1>
+    <div style="display: flex; align-items: center; gap: 10px; margin: 8px 0 24px 0;">
+      <img src="https://static.bundle.app/studio/8031d60a-5cba-4338-a68d-229a53ca5246/5753f7bb-f972-4005-91bf-910a040738bb.png" alt="Beko Logo" style="height: 24px; width: auto;">
+      <span style="font-size: 0.9rem; color: #4b5563; font-weight: 500;">Sponsorluğunda</span>
+    </div>
+    <p>Kolay değil ama <strong>hadi hayal edelim</strong>; bugün kullandığımız <strong>elektrikli fırınlar</strong> 1896’da icat edilmemiş olsun. Ne yapardık?</p>
+    <p><strong>1834’te</strong> icat edilen gazlı fırınlara dönerdik. Diyelim o da kimsenin aklına gelmedi. O zaman <em>ne yapardık?</em></p>
+    <div class="image-block">
+      <img src="https://static.bundle.app/studio/5d88a525-ea48-43df-81c1-8a3640d71b4d/1a77be7d-d677-4e4f-8077-5581ceafdb66.png" alt="Elektrikli fırın">
+      <div class="caption">20.yy başlarından bir elektrikli fırın</div>
+    </div>
+    <p><strong data-tip="Dökme demir sobalar 1700’lerde hem ısı kaynağı hem de fırın olarak kullanıldı.">1700’lerde</strong> pek popüler olan <strong>dökme demir sobalar</strong> devreye girerdi. Bu sobalar hem bulunduğu ortamı ısıtmak, hem üstüne tencere tava koyup ocak olarak değerlendirmek hem de kapaklı gözü ile bildiğimiz fırın olarak kullanmak için tasarlanmıştı. Peki ya, evet doğru tahmin ettiniz, dökme demir fırını da kimse düşünmeseydi?</p></p>
+    <p><strong>Resmi kayıtlarda</strong> yazılı ilk fırın 1490’larda, Fransa’da tuğladan üretilmiş. El mecbur, tuğla fırına dönüyoruz. Peki olmaz olmaz, ya o da icat edilmeseydi? İşte o biraz zor. Çünkü ilk kez yazılı kayıtlara geçmesi, <strong>tuğla fırınların</strong> MÖ 2500’lerden beri kullanıldığı gerçeğini değiştirmiyor. Mezopotamyalılara sevgilerimizle.</p>
+    <div class="image-block">
+      <img src="https://static.bundle.app/studio/5d88a525-ea48-43df-81c1-8a3640d71b4d/04422189-58d3-4c15-9ddf-fd05a21f4813.png" alt="Tuğla fırın">
+      <div class="caption">Roma İmparatorluğu döneminden kalma bir tuğla fırın</div>
+    </div>
+    <p>Peki ya Mezopotamyalılar <em>“Açık ateş neyimize yetmiyor?”</em> dese, tuğla fırına hiç zahmet etmeseydi? Biz de hayatımıza en az 5000 yıldır kullanılan <strong>tandır fırınları</strong> ile devam ederdik. Hindistan’dan Anadolu’ya geniş bir coğrafyada kullanılan bu fırın, büyük bir çukur açıp içini kille kaplayarak hazırlanıyordu. Bu kil fırına köz ve pişecek yemekler konuyordu. Hani bazı kebapçılarda taze lavaş yapılır; işte o fırının atası. <strong>Mucidi de Hintler.</strong></p>
+    <p>Tandır fırınını ilk düşünen Hintli dostumuz o gün başka bir şeyle meşgul olsaydı? Yeryüzü fırınlarına tamah edecektik el mecbur. <strong>30.000 yıl evvel</strong> atalarımız toprağı kazar, kızdırdıkları taşları çukura atar, yemeklerini yanmasın diye yapraklara sarıp taşların üzerine bırakır ve çukuru geri doldururmuş. Günümüzde bir testi yemek yapmak için çukur kazmak akıl alır gibi değil tabii.</p>
+    <h2>Peki ya günümüzün son teknolojileri?</h2>
+    <p>Neyse efendim. İyi ki insanlık yüzyıllar boyunca mutfak çözümlerini geliştirmekten hiç vazgeçmedi ve böylece fırın teknolojisi bugün geldiğimiz noktada en üst seviyeye ulaştı. Bugünlerde hayatımıza giren bazı özellikler için torunlarımız “Bunlar olmasaydı nasıl yemek pişirecektik?” diye soracak. <strong data-tip="3D Fry, sıcak hava sirkülasyonu ile çok az yağla sağlıklı kızartma yapar.">3D Fry</strong> mesela. Ya da yiyeceklerin besin değerlerini koruyan buharla pişirme özelliği <strong data-tip="Steam Function Plus, yiyeceklerin içindeki vitamin ve mineralleri korur.">Steam Function Plus</strong> örneğin. Kekiniz en iyi kıvama ulaştığında fırınınızı otomatik kapatan <strong data-tip="PerfectBake Plus, kekin içindeki nemi ölçerek fırını en doğru anda otomatik kapatır.">PerfectBake Plus</strong>’a ne demeli?</p>
+    <div class="image-block">
+      <img src="https://static.bundle.app/studio/5d88a525-ea48-43df-81c1-8a3640d71b4d/d13f614f-297c-40b1-b031-d930eceb7d6c.jpg" alt="Bosch Serie 8 ankastre fırın">
+    </div>
+    <p>Tabii ki <strong>Bosch’un Serie 8</strong> ankastre fırın ailesinden bahsediyoruz. Kendi kendini temizleme özelliği, cep telefonunuzdan kontrol edebilme gibi daha sayamadığımız türlü yenilik ile dolu Serie 8 ankastre fırınlar, bahsettiğimiz fırın tarihinde yeni bir sayfayı aralıyor dersek yanlış olmaz.</p>
+    <div class="button-wrapper">
+      <a class="button" href="https://ad.doubleclick.net/ddm/trackclk/N2054846.3735144BUNDLEAPP/B32486569.406791996" target="_blank">Hemen Keşfet</a>
+    </div>
+  </div>
+  <div class="tooltip" id="tooltip"></div>
+  <script>
+    const tooltip = document.getElementById('tooltip');
+    document.querySelectorAll('[data-tip]').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        tooltip.textContent = el.dataset.tip;
+        tooltip.style.display = 'block';
+        const rect = el.getBoundingClientRect();
+        const offsetTop = rect.top + rect.height + window.scrollY + 6;
+        const offsetLeft = rect.left + (rect.width / 2) - 130;
+        tooltip.style.top = `${offsetTop}px`;
+        const maxRight = offsetLeft + tooltip.offsetWidth;
+        const viewportWidth = window.innerWidth;
+        if (maxRight > viewportWidth - 20) {
+          tooltip.style.left = `${viewportWidth - tooltip.offsetWidth - 20}px`;
+        } else if (offsetLeft < 20) {
+          tooltip.style.left = `20px`;
+        } else {
+          tooltip.style.left = `${offsetLeft}px`;
+        }
+      });
+      el.addEventListener('mouseleave', () => {
+        tooltip.style.display = 'none';
+      });
+    });
+    const progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      progressBar.style.width = `${scrollPercent}%`;
+    });
+  </script>
+</body>
+</html>
