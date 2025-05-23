@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="tr-TR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fırınsız Bir Mutfak?</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
     :root {
       --bg: #fefefe;
       --text: #111827;
       --muted: #6b7280;
-      --accent: #2563eb;
-      --accent-bg: #eff6ff;
+      --accent: #d2151c;
+      --accent-bg: #ffeaea;
       --font: 'Roboto', sans-serif;
     }
     * {
@@ -22,7 +22,7 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', sans-serif;
+      font-family: var(--font);
       background: var(--bg);
       color: var(--text);
       font-size: 1.05rem;
@@ -34,9 +34,9 @@
       left: 0;
       height: 4px;
       width: 0;
-      background: linear-gradient(to right, #93c5fd, #3b82f6);
+      background: linear-gradient(to right, #fca5a5, #dc2626);
       border-radius: 2px;
-      box-shadow: 0 0 6px rgba(59, 130, 246, 0.3);
+      box-shadow: 0 0 6px rgba(220, 38, 38, 0.3);
       z-index: 1001;
       transition: width 0.25s ease-out;
     }
@@ -68,7 +68,7 @@
       font-family: 'Inter', sans-serif;
     }
     p strong {
-      color: var(--text);
+      color: var(--accent);
       font-weight: 600;
       background-color: var(--accent-bg);
       padding: 0 4px;
@@ -102,11 +102,11 @@
       font-size: 0.95rem;
       font-weight: 500;
       text-decoration: none;
-      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+      box-shadow: 0 2px 6px rgba(210, 21, 28, 0.2);
       transition: all 0.3s ease;
     }
     .button:hover {
-      background-color: #1e40af;
+      background-color: #a60f17;
     }
     .tooltip {
       display: none;
@@ -131,18 +131,20 @@
 <body>
   <div class="progress-bar" id="progress-bar"></div>
   <div class="container">
-        <h1>Fırınsız Bir Mutfak Düşünebilir misiniz?</h1>
-    <div style="display: flex; align-items: center; gap: 10px; margin: 8px 0 24px 0;">
-    <img src="https://static.bundle.app/studio/43bd1d0f-69c7-4104-90d8-2ce628addf20/dd81dccb-1b59-4604-b9fb-2f13145ad9dc.png" alt="Bosch Logo" style="height: 75px; width: auto;">
-    <span style="font-size: 0.9rem; color: #4b5563; font-weight: 500;">Sponsorluğunda</span>
-    </div>
+    <h1>Fırınsız Bir Mutfak Düşünebilir misiniz?</h1>
+    <div style="display: flex; align-items: center; gap: 8px; margin: 8px 0 24px 0;">
+  <div style="max-width: 75px; max-height: 75px; display: flex; align-items: center;">
+    <img src="https://static.bundle.app/studio/6dfae320-0320-4016-a9e4-9700faa6ca38/cbce22db-3bc2-45f1-bdc9-a588f16cfd14.png" alt="Bosch Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+  </div>
+  <span style="font-size: 0.88rem; color: #4b5563; font-weight: 500;"> sponsorluğunda</span>
+</div>
     <p>Kolay değil ama <strong>hadi hayal edelim</strong>; bugün kullandığımız <strong>elektrikli fırınlar</strong> 1896’da icat edilmemiş olsun. Ne yapardık?</p>
     <p><strong>1834’te</strong> icat edilen gazlı fırınlara dönerdik. Diyelim o da kimsenin aklına gelmedi. O zaman <em>ne yapardık?</em></p>
     <div class="image-block">
       <img src="https://static.bundle.app/studio/5d88a525-ea48-43df-81c1-8a3640d71b4d/1a77be7d-d677-4e4f-8077-5581ceafdb66.png" alt="Elektrikli fırın">
       <div class="caption">20.yy başlarından bir elektrikli fırın</div>
     </div>
-    <p><strong data-tip="Dökme demir sobalar 1700’lerde hem ısı kaynağı hem de fırın olarak kullanıldı.">1700’lerde</strong> pek popüler olan <strong>dökme demir sobalar</strong> devreye girerdi. Bu sobalar hem bulunduğu ortamı ısıtmak, hem üstüne tencere tava koyup ocak olarak değerlendirmek hem de kapaklı gözü ile bildiğimiz fırın olarak kullanmak için tasarlanmıştı. Peki ya, evet doğru tahmin ettiniz, dökme demir fırını da kimse düşünmeseydi?</p></p>
+    <p><strong data-tip="Dökme demir sobalar 1700’lerde hem ısı kaynağı hem de fırın olarak kullanıldı.">1700’lerde</strong> pek popüler olan <strong>dökme demir sobalar</strong> devreye girerdi. Bu sobalar hem bulunduğu ortamı ısıtmak, hem üstüne tencere tava koyup ocak olarak değerlendirmek hem de kapaklı gözü ile bildiğimiz fırın olarak kullanmak için tasarlanmıştı. Peki ya, evet doğru tahmin ettiniz, dökme demir fırını da kimse düşünmeseydi?</p>
     <p><strong>Resmi kayıtlarda</strong> yazılı ilk fırın 1490’larda, Fransa’da tuğladan üretilmiş. El mecbur, tuğla fırına dönüyoruz. Peki olmaz olmaz, ya o da icat edilmeseydi? İşte o biraz zor. Çünkü ilk kez yazılı kayıtlara geçmesi, <strong>tuğla fırınların</strong> MÖ 2500’lerden beri kullanıldığı gerçeğini değiştirmiyor. Mezopotamyalılara sevgilerimizle.</p>
     <div class="image-block">
       <img src="https://static.bundle.app/studio/5d88a525-ea48-43df-81c1-8a3640d71b4d/04422189-58d3-4c15-9ddf-fd05a21f4813.png" alt="Tuğla fırın">
@@ -151,15 +153,16 @@
     <p>Peki ya Mezopotamyalılar <em>“Açık ateş neyimize yetmiyor?”</em> dese, tuğla fırına hiç zahmet etmeseydi? Biz de hayatımıza en az 5000 yıldır kullanılan <strong>tandır fırınları</strong> ile devam ederdik. Hindistan’dan Anadolu’ya geniş bir coğrafyada kullanılan bu fırın, büyük bir çukur açıp içini kille kaplayarak hazırlanıyordu. Bu kil fırına köz ve pişecek yemekler konuyordu. Hani bazı kebapçılarda taze lavaş yapılır; işte o fırının atası. <strong>Mucidi de Hintler.</strong></p>
     <p>Tandır fırınını ilk düşünen Hintli dostumuz o gün başka bir şeyle meşgul olsaydı? Yeryüzü fırınlarına tamah edecektik el mecbur. <strong>30.000 yıl evvel</strong> atalarımız toprağı kazar, kızdırdıkları taşları çukura atar, yemeklerini yanmasın diye yapraklara sarıp taşların üzerine bırakır ve çukuru geri doldururmuş. Günümüzde bir testi yemek yapmak için çukur kazmak akıl alır gibi değil tabii.</p>
     <h2>Peki ya günümüzün son teknolojileri?</h2>
-    <p>Neyse efendim. İyi ki insanlık yüzyıllar boyunca mutfak çözümlerini geliştirmekten hiç vazgeçmedi ve böylece fırın teknolojisi bugün geldiğimiz noktada en üst seviyeye ulaştı. Bugünlerde hayatımıza giren bazı özellikler için torunlarımız “Bunlar olmasaydı nasıl yemek pişirecektik?” diye soracak. <strong data-tip="3D Fry, sıcak hava sirkülasyonu ile çok az yağla sağlıklı kızartma yapar.">3D Fry</strong> mesela. Ya da yiyeceklerin besin değerlerini koruyan buharla pişirme özelliği <strong data-tip="Steam Function Plus, yiyeceklerin içindeki vitamin ve mineralleri korur.">Steam Function Plus</strong> örneğin. Kekiniz en iyi kıvama ulaştığında fırınınızı otomatik kapatan <strong data-tip="PerfectBake Plus, kekin içindeki nemi ölçerek fırını en doğru anda otomatik kapatır.">PerfectBake Plus</strong>’a ne demeli?</p>
+    <p>İyi ki insanlık mutfak çözümlerini geliştirmekten hiç vazgeçmedi. <strong data-tip="3D Fry, sıcak hava sirkülasyonu ile çok az yağla sağlıklı kızartma yapar.">3D Fry</strong> mesela. Ya da yiyeceklerin besin değerlerini koruyan <strong data-tip="Steam Function Plus, yiyeceklerin içindeki vitamin ve mineralleri korur.">Steam Function Plus</strong>. Kekiniz en iyi kıvama ulaştığında fırınınızı otomatik kapatan <strong data-tip="PerfectBake Plus, kekin içindeki nemi ölçerek fırını en doğru anda otomatik kapatır.">PerfectBake Plus</strong>’a ne demeli?</p>
     <div class="image-block">
       <img src="https://static.bundle.app/studio/5d88a525-ea48-43df-81c1-8a3640d71b4d/d13f614f-297c-40b1-b031-d930eceb7d6c.jpg" alt="Bosch Serie 8 ankastre fırın">
     </div>
-    <p>Tabii ki <strong>Bosch’un Serie 8</strong> ankastre fırın ailesinden bahsediyoruz. Kendi kendini temizleme özelliği, cep telefonunuzdan kontrol edebilme gibi daha sayamadığımız türlü yenilik ile dolu Serie 8 ankastre fırınlar, bahsettiğimiz fırın tarihinde yeni bir sayfayı aralıyor dersek yanlış olmaz.</p>
+    <p><strong>Bosch’un Serie 8</strong> ankastre fırın ailesi; kendini temizleme, cep telefonundan kontrol gibi birçok yenilikle fırın tarihinde yeni bir sayfa açıyor.</p>
     <div class="button-wrapper">
       <a class="button" href="https://ad.doubleclick.net/ddm/trackclk/N2054846.3735144BUNDLEAPP/B32486569.406791996" target="_blank">Hemen Keşfet</a>
     </div>
   </div>
+
   <div class="tooltip" id="tooltip"></div>
   <script>
     const tooltip = document.getElementById('tooltip');
@@ -185,6 +188,7 @@
         tooltip.style.display = 'none';
       });
     });
+
     const progressBar = document.getElementById('progress-bar');
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY;
