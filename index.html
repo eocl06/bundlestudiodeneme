@@ -1,410 +1,531 @@
-<!DOCTYPE html>
-
-<html lang="tr-TR">
-
+```html
+<!doctype html>
+<html lang="tr">
 <head>
-
-  <meta charset="UTF-8" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Fırınsız Bir Mutfak?</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <style>
-
-    :root {
-
-      --bg: #fefefe;
-
-      --text: #111827;
-
-      --muted: #6b7280;
-
-      --accent: #d2151c;
-
-      --accent-bg: #ffeaea;
-
-      --font: 'Roboto', sans-serif;
-
-    }
-
-    * {
-
-      box-sizing: border-box;
-
-    }
-
-    body {
-
-      margin: 0;
-
-      padding: 0;
-
-      font-family: var(--font);
-
-      background: var(--bg);
-
-      color: var(--text);
-
-      font-size: 1.05rem;
-
-      line-height: 1.75;
-
-    }
-
-    .progress-bar {
-
-      position: fixed;
-
-      top: 0;
-
-      left: 0;
-
-      height: 4px;
-
-      width: 0;
-
-      background: linear-gradient(to right, #fca5a5, #dc2626);
-
-      border-radius: 2px;
-
-      box-shadow: 0 0 6px rgba(220, 38, 38, 0.3);
-
-      z-index: 1001;
-
-      transition: width 0.25s ease-out;
-
-    }
-
-    .container {
-
-      max-width: 680px;
-
-      margin: 0 auto;
-
-      padding: 16px 24px 32px;
-
-      background: #fff;
-
-      border-radius: 20px;
-
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-
-      position: relative;
-
-    }
-
-    h1, h2 {
-
-      font-weight: 700;
-
-      line-height: 1.3;
-
-      margin-bottom: 24px;
-
-    }
-
-    h1 {
-
-      font-size: 2.25rem;
-
-      font-family: 'Playfair Display', serif;
-
-    }
-
-    h2 {
-
-      font-size: 1.5rem;
-
-      margin-top: 48px;
-
-    }
-
-    p {
-
-      margin-bottom: 20px;
-
-      color: var(--muted);
-
-      font-family: 'Inter', sans-serif;
-
-    }
-
-    p strong {
-
-  color: var(--text); /* Ana metin rengi ile uyumlu */
-
-  font-weight: 600;
-
-  background-color: transparent; /* Arka plan yok */
-
-  padding: 0 2px;
-
-  border-radius: 4px;
-
-  cursor: pointer;
-
-  position: relative;
-
-}
-
-
-
-p strong[data-tip] {
-
-  color: var(--accent); /* Sadece tooltip olanlar kırmızı */
-
-  background-color: var(--accent-bg); /* Hafif kırmızı zemin */
-
-  padding: 0 4px;
-
-}
-
-    }
-
-    .image-block {
-
-      margin: 32px 0;
-
-    }
-
-    .image-block img {
-
-      width: 100%;
-
-      border-radius: 12px;
-
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-
-    }
-
-    .caption {
-
-      text-align: center;
-
-      font-size: 0.875rem;
-
-      color: #9ca3af;
-
-      margin-top: 8px;
-
-    }
-
-    .button-wrapper {
-
-      text-align: center;
-
-      margin-top: 32px;
-
-    }
-
-    .button {
-
-      background-color: var(--accent);
-
-      color: white;
-
-      padding: 12px 32px;
-
-      border-radius: 10px;
-
-      font-size: 0.95rem;
-
-      font-weight: 500;
-
-      text-decoration: none;
-
-      box-shadow: 0 2px 6px rgba(210, 21, 28, 0.2);
-
-      transition: all 0.3s ease;
-
-    }
-
-    .button:hover {
-
-      background-color: #a60f17;
-
-    }
-
-    .tooltip {
-
-      display: none;
-
-      position: absolute;
-
-      background-color: #fff;
-
-      border: 1px solid #d1d5db;
-
-      padding: 12px 16px;
-
-      border-radius: 8px;
-
-      font-size: 0.9rem;
-
-      color: var(--text);
-
-      max-width: 260px;
-
-      width: max-content;
-
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-
-      z-index: 1000;
-
-      word-wrap: break-word;
-
-      overflow-wrap: break-word;
-
-      white-space: normal;
-
-      box-sizing: border-box;
-
-    }
-
-  </style>
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bundle Premium’da Yeni Dönem</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  :root {
+    --ink:#1A1A1A;
+    --muted:#765B80;
+    --muted-soft:#9B8DA2;
+    --pink:#F0529C;
+    --pink-dark:#D93683;
+    --gold:#D9A441;
+    --gold-dark:#A56E12;
+    --line:rgba(0,0,0,.08);
+    --shadow:0 28px 90px rgba(146,55,105,.14);
+  }
+
+  * { box-sizing:border-box; }
+
+  html, body {
+    margin:0;
+    padding:0;
+    min-height:100%;
+  }
+
+  body {
+    font-family:'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 18% 6%, rgba(255,225,139,.80) 0%, rgba(255,225,139,0) 28%),
+      radial-gradient(circle at 88% 18%, rgba(240,82,156,.24) 0%, rgba(240,82,156,0) 31%),
+      radial-gradient(circle at 50% 100%, rgba(215,237,255,.78) 0%, rgba(215,237,255,0) 42%),
+      linear-gradient(160deg, #FFF4DC 0%, #FFF1F8 46%, #EEF6FF 100%);
+  }
+
+  .page {
+    width:100%;
+    max-width:760px;
+    margin:0 auto;
+    padding:24px 18px 48px;
+  }
+
+  .top {
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:12px 0 20px;
+  }
+
+  .brand-logo {
+    width:112px;
+    height:auto;
+    display:block;
+  }
+
+  .close {
+    position:absolute;
+    right:0;
+    top:8px;
+    width:34px;
+    height:34px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    background:rgba(255,255,255,.66);
+    color:rgba(0,0,0,.48);
+    font-size:22px;
+    line-height:30px;
+    cursor:pointer;
+  }
+
+  .hero {
+    width:100%;
+    max-width:620px;
+    margin:0 auto;
+    border-radius:34px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    background:linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(255,248,232,.90) 100%);
+    border:1px solid rgba(255,255,255,.78);
+    position:relative;
+  }
+
+  .hero::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 20% 18%, rgba(240,82,156,.16), transparent 30%),
+      radial-gradient(circle at 78% 12%, rgba(217,164,65,.28), transparent 28%),
+      radial-gradient(circle at 50% 100%, rgba(255,255,255,.72), transparent 45%);
+    pointer-events:none;
+  }
+
+  .hero-inner {
+    position:relative;
+    padding:34px 26px 32px;
+    text-align:center;
+  }
+
+  .premium-badge {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 14px;
+    border-radius:999px;
+    background:rgba(217,164,65,.16);
+    color:var(--gold-dark);
+    font-size:14px;
+    font-weight:900;
+    margin-bottom:22px;
+  }
+
+  .premium-badge span {
+    width:8px;
+    height:8px;
+    border-radius:999px;
+    background:var(--gold);
+    box-shadow:0 0 0 5px rgba(217,164,65,.14);
+  }
+
+  h1 {
+    font-family:'Baloo 2', system-ui, sans-serif;
+    font-size:clamp(47px, 9vw, 72px);
+    line-height:.92;
+    letter-spacing:-.047em;
+    margin:0 auto 18px;
+    max-width:560px;
+  }
+
+  h1 strong {
+    color:var(--pink);
+    font-weight:800;
+  }
+
+  .hero-copy {
+    margin:0 auto;
+    max-width:500px;
+    color:var(--muted);
+    font-size:clamp(18px, 3.4vw, 23px);
+    line-height:1.42;
+    letter-spacing:-.025em;
+    font-weight:500;
+  }
+
+  .content {
+    width:100%;
+    max-width:610px;
+    margin:38px auto 0;
+  }
+
+  .story {
+    display:grid;
+    gap:20px;
+    margin:0 0 32px;
+  }
+
+  .story p {
+    margin:0;
+    font-size:clamp(18px, 3.2vw, 22px);
+    line-height:1.62;
+    letter-spacing:-.02em;
+    font-weight:500;
+  }
+
+  .story p.muted {
+    color:var(--muted);
+  }
+
+  .story strong {
+    color:var(--pink);
+    font-weight:900;
+  }
+
+  .card {
+    margin:32px 0 0;
+    border-radius:30px;
+    box-shadow:0 16px 54px rgba(146,55,105,.08);
+  }
+
+  .future-card {
+    background:rgba(255,255,255,.82);
+    border:1px solid var(--line);
+    padding:26px 20px 20px;
+  }
+
+  .pricing-card {
+    padding:28px 22px 24px;
+    background:linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(255,247,227,.92) 100%);
+    border:1px solid rgba(217,164,65,.24);
+  }
+
+  .protection-card {
+    padding:30px 24px;
+    text-align:center;
+    background:linear-gradient(180deg, rgba(255,241,248,.96) 0%, rgba(255,255,255,.88) 100%);
+    border:2px solid rgba(240,82,156,.68);
+  }
+
+  .card h2 {
+    font-family:'Baloo 2', system-ui, sans-serif;
+    font-size:clamp(31px, 6vw, 44px);
+    line-height:1.02;
+    letter-spacing:-.035em;
+    margin:0 0 18px;
+    text-align:center;
+  }
+
+  .benefit-grid {
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:12px;
+  }
+
+  .benefit {
+    min-height:144px;
+    border-radius:23px;
+    background:linear-gradient(180deg, #FFFFFF 0%, #FFF1F8 100%);
+    border:1px solid rgba(240,82,156,.14);
+    padding:18px 12px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+  }
+
+  .benefit:nth-child(2),
+  .benefit:nth-child(4) {
+    background:linear-gradient(180deg, #FFFFFF 0%, #FFF7E3 100%);
+    border-color:rgba(217,164,65,.20);
+  }
+
+  .benefit .icon {
+    font-size:31px;
+    line-height:1;
+    margin-bottom:11px;
+  }
+
+  .benefit h3 {
+    margin:0 0 7px;
+    font-size:16px;
+    line-height:1.12;
+    letter-spacing:-.03em;
+    font-weight:900;
+  }
+
+  .benefit p {
+    margin:0;
+    color:var(--muted);
+    font-size:12.5px;
+    line-height:1.42;
+    font-weight:650;
+  }
+
+  .price-table {
+    display:grid;
+    gap:12px;
+  }
+
+  .price-row {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:18px;
+    border-radius:22px;
+    background:rgba(255,255,255,.74);
+    border:1px solid rgba(0,0,0,.06);
+  }
+
+  .price-row span {
+    font-size:clamp(18px, 3.5vw, 23px);
+    line-height:1.2;
+    letter-spacing:-.03em;
+    font-weight:800;
+  }
+
+  .price-row strong {
+    white-space:nowrap;
+    font-size:clamp(26px, 5vw, 36px);
+    line-height:1;
+    letter-spacing:-.05em;
+    font-weight:900;
+  }
+
+  .pricing-note {
+    margin:18px auto 0;
+    max-width:500px;
+    color:var(--muted);
+    font-size:clamp(15px, 3vw, 18px);
+    line-height:1.5;
+    letter-spacing:-.02em;
+    text-align:center;
+    font-weight:600;
+  }
+
+  .protection-badge {
+    display:inline-flex;
+    margin-bottom:16px;
+    padding:8px 12px;
+    border-radius:999px;
+    background:rgba(240,82,156,.11);
+    color:var(--pink);
+    font-size:13px;
+    line-height:1;
+    font-weight:900;
+  }
+
+  .protection-card p {
+    margin:0;
+    color:var(--muted);
+    font-size:clamp(17px, 3.2vw, 21px);
+    line-height:1.52;
+    letter-spacing:-.02em;
+    font-weight:500;
+  }
+
+  .protection-card strong {
+    color:var(--ink);
+    font-weight:900;
+  }
+
+  .mini-explain {
+    margin-top:18px;
+    padding:16px;
+    border-radius:22px;
+    background:rgba(255,255,255,.62);
+    border:1px solid rgba(240,82,156,.14);
+    color:var(--muted);
+    font-size:clamp(14px, 2.8vw, 17px);
+    line-height:1.5;
+    font-weight:600;
+  }
+
+  .mini-explain strong {
+    color:var(--pink-dark);
+  }
+
+  .signature {
+    margin:34px auto 0;
+    text-align:center;
+  }
+
+  .signature p {
+    margin:0;
+    font-family:'Baloo 2', system-ui, sans-serif;
+    font-size:clamp(36px, 7vw, 54px);
+    line-height:1;
+    letter-spacing:-.04em;
+    color:var(--pink);
+    font-weight:800;
+  }
+
+  .signature span {
+    display:block;
+    margin-top:8px;
+    color:var(--muted);
+    font-size:15px;
+    font-weight:800;
+  }
+
+  .legal {
+    margin:22px auto 0;
+    max-width:470px;
+    color:var(--muted-soft);
+    font-size:11px;
+    line-height:1.5;
+    text-align:center;
+    font-weight:500;
+  }
+
+  @media (max-width:480px) {
+    .page { padding:18px 14px 36px; }
+    .brand-logo { width:96px; }
+    .hero { border-radius:28px; }
+    .hero-inner { padding:28px 18px 26px; }
+    .content { margin-top:34px; padding:0 6px; }
+    .future-card { padding:22px 14px 16px; }
+    .benefit { min-height:136px; padding:16px 10px; }
+    .benefit .icon { font-size:29px; }
+    .benefit h3 { font-size:15px; }
+    .benefit p { font-size:12px; }
+    .pricing-card, .protection-card { padding:25px 18px; }
+    .price-row { padding:17px 15px; }
+    .price-row strong { font-size:30px; }
+  }
+</style>
 </head>
 
 <body>
+  <main class="page">
+
+    <header class="top">
+      <svg class="brand-logo" aria-label="Bundle" role="img" width="125" height="29" viewBox="0 0 125 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.65" d="M0 1.88575C0 0.844279 0.844281 0 1.88575 0H16.4564V18.6044H1.88575C0.84428 18.6044 0 17.7601 0 16.7187V1.88575Z" fill="#F0529C"/>
+        <path d="M16.4385 0H31.0091C32.0506 0 32.8949 0.844281 32.8949 1.88575V26.0209C32.8949 27.0623 32.0506 27.9066 31.0091 27.9066H18.3242C17.2828 27.9066 16.4385 27.0623 16.4385 26.0209V0Z" fill="#F0529C"/>
+        <path d="M56.8603 20.8131C56.8603 23.2398 56.167 25.1198 54.7803 26.4531C53.4203 27.7865 51.6203 28.4531 49.3803 28.4531H42.7003C42.4336 28.4531 42.3003 28.3198 42.3003 28.0531V0.853123C42.3003 0.586456 42.4336 0.453123 42.7003 0.453123H48.8203C51.247 0.453123 53.1403 1.09312 54.5003 2.37312C55.887 3.62646 56.5803 5.46646 56.5803 7.89313C56.5803 10.7731 55.5536 12.7598 53.5003 13.8531C53.367 13.9331 53.3536 13.9998 53.4603 14.0531C54.527 14.6931 55.3536 15.5865 55.9403 16.7331C56.5536 17.8798 56.8603 19.2398 56.8603 20.8131ZM46.3003 3.77312C46.1936 3.77312 46.1403 3.82646 46.1403 3.93312V12.4131C46.1403 12.5198 46.1936 12.5731 46.3003 12.5731H48.8603C50.1136 12.5731 51.087 12.1998 51.7803 11.4531C52.4736 10.6798 52.8203 9.61312 52.8203 8.25313C52.8203 6.83979 52.4736 5.74646 51.7803 4.97312C51.087 4.17312 50.1136 3.77312 48.8603 3.77312H46.3003ZM49.0603 25.0931C50.287 25.0931 51.247 24.6798 51.9403 23.8531C52.6603 23.0265 53.0203 21.8531 53.0203 20.3331C53.0203 18.7865 52.6736 17.5865 51.9803 16.7331C51.287 15.8531 50.327 15.4131 49.1003 15.4131H46.3003C46.1936 15.4131 46.1403 15.4665 46.1403 15.5731V24.9331C46.1403 25.0398 46.1936 25.0931 46.3003 25.0931H49.0603ZM67.3825 8.49312C67.3825 8.22646 67.5158 8.09312 67.7825 8.09312H70.8225C71.0892 8.09312 71.2225 8.22646 71.2225 8.49312V28.0531C71.2225 28.3198 71.0892 28.4531 70.8225 28.4531H67.7825C67.5158 28.4531 67.3825 28.3198 67.3825 28.0531V26.8931C67.3825 26.8131 67.3558 26.7731 67.3025 26.7731C67.2758 26.7731 67.2358 26.7998 67.1825 26.8531C66.3825 28.1065 65.1025 28.7331 63.3425 28.7331C61.7425 28.7331 60.4492 28.2531 59.4625 27.2931C58.4758 26.3065 57.9825 24.8131 57.9825 22.8131V8.49312C57.9825 8.22646 58.1158 8.09312 58.3825 8.09312H61.4225C61.6892 8.09312 61.8225 8.22646 61.8225 8.49312V21.9731C61.8225 24.2665 62.7292 25.4131 64.5425 25.4131C65.4492 25.4131 66.1425 25.0931 66.6225 24.4531C67.1292 23.7865 67.3825 22.8798 67.3825 21.7331V8.49312ZM81.5281 7.81312C83.2081 7.81312 84.4881 8.38646 85.3681 9.53312C86.2748 10.6531 86.7281 12.2531 86.7281 14.3331V28.0531C86.7281 28.3198 86.5948 28.4531 86.3281 28.4531H83.2881C83.0215 28.4531 82.8881 28.3198 82.8881 28.0531V14.6531C82.8881 13.5331 82.6481 12.6665 82.1681 12.0531C81.6881 11.4398 81.0215 11.1331 80.1681 11.1331C79.2881 11.1331 78.5948 11.4398 78.0881 12.0531C77.6081 12.6398 77.3415 13.4798 77.2881 14.5731C77.2881 14.7331 77.2748 14.8131 77.2481 14.8131V28.0531C77.2481 28.3198 77.1148 28.4531 76.8481 28.4531H73.8081C73.5415 28.4531 73.4081 28.3198 73.4081 28.0531V8.49312C73.4081 8.22646 73.5415 8.09312 73.8081 8.09312H76.8481C77.1148 8.09312 77.2481 8.22646 77.2481 8.49312V9.57312C77.2481 9.62646 77.2748 9.66646 77.3281 9.69312C77.3815 9.69312 77.4348 9.65312 77.4881 9.57312C78.4481 8.39979 79.7948 7.81312 81.5281 7.81312ZM97.8738 0.853123C97.8738 0.586456 98.0071 0.453123 98.2738 0.453123H101.314C101.58 0.453123 101.714 0.586456 101.714 0.853123V28.0531C101.714 28.3198 101.58 28.4531 101.314 28.4531H98.2738C98.0071 28.4531 97.8738 28.3198 97.8738 28.0531V27.4131C97.8738 27.3598 97.8471 27.3198 97.7938 27.2931C97.7671 27.2665 97.7271 27.2798 97.6738 27.3331C97.1671 27.8131 96.5938 28.1731 95.9538 28.4131C95.3138 28.6531 94.6738 28.7731 94.0338 28.7731C92.2738 28.7731 90.8738 28.1998 89.8338 27.0531C88.8204 25.8798 88.3138 24.3465 88.3138 22.4531V14.1331C88.3138 12.1598 88.8204 10.6131 89.8338 9.49312C90.8738 8.34646 92.2738 7.77312 94.0338 7.77312C94.6738 7.77312 95.3138 7.89312 95.9538 8.13312C96.5938 8.37312 97.1671 8.73312 97.6738 9.21312C97.7271 9.26646 97.7671 9.27979 97.7938 9.25312C97.8471 9.22646 97.8738 9.18646 97.8738 9.13312V0.853123ZM95.0338 25.4531C95.7804 25.4531 96.4071 25.2131 96.9138 24.7331C97.4471 24.2265 97.7671 23.5731 97.8738 22.7731V13.7731C97.7671 12.9731 97.4471 12.3331 96.9138 11.8531C96.4071 11.3465 95.7804 11.0931 95.0338 11.0931C94.1804 11.0931 93.4738 11.3998 92.9138 12.0131C92.3804 12.6265 92.1138 13.4131 92.1138 14.3731V22.1731C92.1138 23.1331 92.3804 23.9198 92.9138 24.5331C93.4738 25.1465 94.1804 25.4531 95.0338 25.4531ZM104.14 28.4531C103.874 28.4531 103.74 28.3198 103.74 28.0531V0.853123C103.74 0.586456 103.874 0.453123 104.14 0.453123H107.18C107.447 0.453123 107.58 0.586456 107.58 0.853123V28.0531C107.58 28.3198 107.447 28.4531 107.18 28.4531H104.14ZM122.637 19.4531C122.637 19.7198 122.503 19.8531 122.237 19.8531H113.197C113.09 19.8531 113.037 19.9065 113.037 20.0131V22.1731C113.037 23.1331 113.303 23.9198 113.837 24.5331C114.37 25.1465 115.063 25.4531 115.917 25.4531C116.663 25.4531 117.29 25.2265 117.797 24.7731C118.303 24.3198 118.623 23.7331 118.757 23.0131C118.837 22.7998 118.983 22.6931 119.197 22.6931L122.157 22.8531C122.29 22.8531 122.383 22.8931 122.437 22.9731C122.517 23.0531 122.543 23.1465 122.517 23.2531C122.33 24.9865 121.663 26.3465 120.517 27.3331C119.397 28.2931 117.863 28.7731 115.917 28.7731C113.863 28.7731 112.223 28.1998 110.997 27.0531C109.797 25.9065 109.197 24.3731 109.197 22.4531V14.1331C109.197 12.2398 109.797 10.7065 110.997 9.53312C112.223 8.35979 113.863 7.77312 115.917 7.77312C117.997 7.77312 119.637 8.35979 120.837 9.53312C122.037 10.7065 122.637 12.2398 122.637 14.1331V19.4531ZM115.917 11.0931C115.063 11.0931 114.37 11.3998 113.837 12.0131C113.303 12.6265 113.037 13.4131 113.037 14.3731V16.4931C113.037 16.5998 113.09 16.6531 113.197 16.6531H118.677C118.783 16.6531 118.837 16.5998 118.837 16.4931V14.3731C118.837 13.4131 118.57 12.6265 118.037 12.0131C117.503 11.3998 116.797 11.0931 115.917 11.0931Z" fill="#1A1A1A"/>
+      </svg>
+
+      <button class="close" aria-label="Kapat">×</button>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="premium-badge">
+          <span></span>
+          Bundle Premium’da yeni dönem
+        </div>
+
+        <h1>
+          İyi ki <br />
+          <strong>bizimlesin. ❤️</strong>
+        </h1>
+
+        <p class="hero-copy">
+          Bundle Premium’u ilk destekleyen kullanıcılardan biri oldun.
+        </p>
+      </div>
+    </section>
+
+    <section class="content">
+
+      <div class="story">
+        <p>
+          Yıllardır Premium’u erişilebilir tutmaya çalıştık. Çünkü biliyoruz ki
+          birçok kullanıcı yalnızca reklamsız deneyim için değil,
+          <strong>Bundle’ın büyümesine destek olmak</strong> için Premium’u tercih etti.
+        </p>
+
+        <p class="muted">
+          Şimdi Bundle Premium, yeni bir döneme hazırlanıyor. Türkiye’nin ilk gerçek
+          hikâyelere dayalı kısa video ve podcast platformu olan
+          <strong>Bundle Origins</strong> ve gündemi, haberleri, merak ettiklerini
+          yapay zekaya sorarak keşfetmeni sağlayacak <strong>Bundle AI Chatbot</strong>
+          yakında aramızda olacak.
+        </p>
+
+        <p>
+          Bugüne kadar bize duyduğun güven sayesinde bugün buradayız.
+        </p>
+      </div>
+
+      <section class="future-card card">
+        <h2>Premium’da neler büyüyor?</h2>
+
+        <div class="benefit-grid">
+          <article class="benefit">
+            <div class="icon">🎬</div>
+            <h3>Bundle Origins</h3>
+            <p>Türkiye’nin ilk gerçek hikâyelere dayalı kısa video ve podcast platformu.</p>
+          </article>
+
+          <article class="benefit">
+            <div class="icon">✨</div>
+            <h3>Bundle AI Chatbot</h3>
+            <p>Gündemi, haberleri ve merak ettiklerini yapay zekaya sorarak keşfet.</p>
+          </article>
+
+          <article class="benefit">
+            <div class="icon">📰</div>
+            <h3>Bundle Haber Deneyimi</h3>
+            <p>Daha temiz, rahat ve odaklı bir okuma deneyimi.</p>
+          </article>
+
+          <article class="benefit">
+            <div class="icon">🎮</div>
+            <h3>Bundle Games</h3>
+            <p>Yeni oyunlar, ekstra haklar ve daha fazla eğlence.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="pricing-card card">
+        <h2>Yeni Premium fiyatı</h2>
+
+        <div class="price-table">
+          <div class="price-row">
+            <span>Aylık Premium</span>
+            <strong>67,99 TL</strong>
+          </div>
+
+          <div class="price-row">
+            <span>Yıllık Premium</span>
+            <strong>679 TL</strong>
+          </div>
+        </div>
+
+        <p class="pricing-note">
+          Bu fiyatlar yeni Premium dönemi için geçerli olacak.
+        </p>
+      </section>
 
-  <div class="progress-bar" id="progress-bar"></div>
+      <section class="protection-card card">
+        <div class="protection-badge">Mevcut Premium kullanıcılarına teşekkür</div>
 
-  <div class="container">
+        <h2>Yeni fiyata hemen taşınmıyorsun.</h2>
 
-    <h1>Fırınsız Bir Mutfak Düşünebilir misiniz?</h1>
+        <p>
+          Mevcut Premium kullanıcılarımızı bu yeni fiyata doğrudan taşımıyoruz.
+          Aboneliğin, <strong>App Store’da gösterilen yenileme fiyatı ve tarihine göre</strong>
+          devam edecek.
+        </p>
 
-    <div style="display: flex; align-items: center; gap: 8px; margin: 8px 0 24px 0;">
+        <div class="mini-explain">
+          Yeni fiyatı duyuruyoruz; ama bizimle bu aşamaya kadar gelen kullanıcılarımızı
+          <strong>kendi yenileme takvimleri içinde korumak</strong> istiyoruz.
+        </div>
+      </section>
 
-  <div style="max-width: 75px; max-height: 75px; display: flex; align-items: center;">
+      <div class="signature">
+        <p>Teşekkürler.</p>
+        <span>Bundle ekibi</span>
+      </div>
 
-    <img src="https://static.bundle.app/studio/6dfae320-0320-4016-a9e4-9700faa6ca38/cbce22db-3bc2-45f1-bdc9-a588f16cfd14.png" alt="Bosch Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+      <p class="legal">
+        Nihai yenileme fiyatını ve tarihini App Store abonelik ekranında görebilirsin.
+        Aboneliğini dilediğin zaman App Store hesap ayarlarından yönetebilirsin.
+      </p>
 
-  </div>
+    </section>
 
-  <span style="font-size: 0.88rem; color: #4b5563; font-weight: 500;"> sponsorluğunda</span>
-
-</div>
-
-    <p>Kolay değil ama <strong>hadi hayal edelim</strong>; bugün kullandığımız <strong>elektrikli fırınlar</strong> 1896’da icat edilmemiş olsun. Ne yapardık?</p>
-
-    <p><strong>1834’te</strong> icat edilen gazlı fırınlara dönerdik. Diyelim o da kimsenin aklına gelmedi. O zaman <em>ne yapardık?</em></p>
-
-    <div class="image-block">
-
-      <img src="https://static.bundle.app/studio/5d88a525-ea48-43df-81c1-8a3640d71b4d/1a77be7d-d677-4e4f-8077-5581ceafdb66.png" alt="Elektrikli fırın">
-
-      <div class="caption">20.yy başlarından bir elektrikli fırın</div>
-
-    </div>
-
-    <p><strong>1700’lerde</strong> pek popüler olan <strong>dökme demir sobalar</strong> devreye girerdi.<strong>Resmi kayıtlarda</strong> yazılı ilk fırın 1490’larda, Fransa’da tuğladan üretilmiş. El mecbur, tuğla fırına dönüyoruz. Peki olmaz olmaz, ya o da icat edilmeseydi? İşte o biraz zor. Çünkü ilk kez yazılı kayıtlara geçmesi, <strong>tuğla fırınların</strong> MÖ 2500’lerden beri kullanıldığı gerçeğini değiştirmiyor. Mezopotamyalılara sevgilerimizle.</p>
-
-    <div class="image-block">
-
-      <img src="https://static.bundle.app/studio/5d88a525-ea48-43df-81c1-8a3640d71b4d/04422189-58d3-4c15-9ddf-fd05a21f4813.png" alt="Tuğla fırın">
-
-      <div class="caption">Roma İmparatorluğu döneminden kalma bir tuğla fırın</div>
-
-    </div>
-
-    <p>Peki ya Mezopotamyalılar <em>“Açık ateş neyimize yetmiyor?”</em> dese, tuğla fırına hiç zahmet etmeseydi? Biz de hayatımıza en az 5000 yıldır kullanılan <strong>tandır fırınları</strong> ile devam ederdik. Hindistan’dan Anadolu’ya geniş bir coğrafyada kullanılan bu fırın, büyük bir çukur açıp içini kille kaplayarak hazırlanıyordu. Bu kil fırına köz ve pişecek yemekler konuyordu. Hani bazı kebapçılarda taze lavaş yapılır; işte o fırının atası. <strong>Mucidi de Hintler.</strong></p>
-
-    <p>Tandır fırınını ilk düşünen Hintli dostumuz o gün başka bir şeyle meşgul olsaydı? Yeryüzü fırınlarına tamah edecektik el mecbur. <strong>30.000 yıl evvel</strong> atalarımız toprağı kazar, kızdırdıkları taşları çukura atar, yemeklerini yanmasın diye yapraklara sarıp taşların üzerine bırakır ve çukuru geri doldururmuş. Günümüzde bir testi yemek yapmak için çukur kazmak akıl alır gibi değil tabii.</p>
-
-    <h2>Peki ya günümüzün son teknolojileri?</h2>
-
-    <p>İyi ki insanlık mutfak çözümlerini geliştirmekten hiç vazgeçmedi. <strong data-tip="3D Fry, sıcak hava sirkülasyonu ile çok az yağla sağlıklı kızartma yapar.">3D Fry</strong> mesela. Ya da yiyeceklerin besin değerlerini koruyan <strong data-tip="Steam Function Plus, yiyeceklerin içindeki vitamin ve mineralleri korur.">Steam Function Plus</strong>. Kekiniz en iyi kıvama ulaştığında fırınınızı otomatik kapatan <strong data-tip="PerfectBake Plus, kekin içindeki nemi ölçerek fırını en doğru anda otomatik kapatır.">PerfectBake Plus</strong>’a ne demeli?</p>
-
-    <div class="image-block">
-
-      <img src="https://static.bundle.app/studio/5d88a525-ea48-43df-81c1-8a3640d71b4d/d13f614f-297c-40b1-b031-d930eceb7d6c.jpg" alt="Bosch Serie 8 ankastre fırın">
-
-    </div>
-
-    <p><strong>Bosch’un Serie 8</strong> ankastre fırın ailesi; kendini temizleme, cep telefonundan kontrol gibi birçok yenilikle fırın tarihinde yeni bir sayfa açıyor.</p>
-
-   <div class="button-wrapper">
-
-      <a class="button" href="https://ad.doubleclick.net/ddm/trackclk/N2054846.3735144BUNDLEAPP/B32486569.406791996" target="_blank">Hemen Keşfet</a>
-
-  </div>
-
-  <div class="tooltip" id="tooltip"></div>
-
-  <script>
-
-    const tooltip = document.getElementById('tooltip');
-
-    document.querySelectorAll('[data-tip]').forEach(el => {
-
-      el.addEventListener('mouseenter', () => {
-
-        tooltip.textContent = el.dataset.tip;
-
-        tooltip.style.display = 'block';
-
-        const rect = el.getBoundingClientRect();
-
-        const offsetTop = rect.top + rect.height + window.scrollY + 6;
-
-        const offsetLeft = rect.left + (rect.width / 2) - 130;
-
-        tooltip.style.top = `${offsetTop}px`;
-
-        const maxRight = offsetLeft + tooltip.offsetWidth;
-
-        const viewportWidth = window.innerWidth;
-
-        if (maxRight > viewportWidth - 20) {
-
-          tooltip.style.left = `${viewportWidth - tooltip.offsetWidth - 20}px`;
-
-        } else if (offsetLeft < 20) {
-
-          tooltip.style.left = `20px`;
-
-        } else {
-
-          tooltip.style.left = `${offsetLeft}px`;
-
-        }
-
-      });
-
-      el.addEventListener('mouseleave', () => {
-
-        tooltip.style.display = 'none';
-
-      });
-
-    });
-
-
-
-    const progressBar = document.getElementById('progress-bar');
-
-    window.addEventListener('scroll', () => {
-
-      const scrollTop = window.scrollY;
-
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-
-      const scrollPercent = (scrollTop / docHeight) * 100;
-
-      progressBar.style.width = `${scrollPercent}%`;
-
-    });
-
-  </script>
-
+  </main>
 </body>
-
 </html>
-
+```
